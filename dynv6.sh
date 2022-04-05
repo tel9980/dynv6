@@ -6,6 +6,9 @@
 # 4. Create a cron job. Example script on /opt to check every hour:
 #    sudo crontab -e
 #    0 * * * * /opt/dynv6.sh &>/dev/null 2>&1
+# 
+# Also, you can put a link to script on dhclient-exit-hooks.d:
+#	sudo ln -s /opt/dynv6.sh /etc/dhcp/dhclient-exit-hooks.d/dynv6.sh
 # Done!
 
 HOSTNAME_DYNV6='' #Your Hostname
