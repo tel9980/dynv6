@@ -1,4 +1,4 @@
-# dynv6 updater script for linux
+# Dynv6 updater script for linux
 
 1. Download script: wget https://raw.githubusercontent.com/dantavares/dynv6/main/dynv6.sh
 2. Set script as executable: sudo chmod +x dynv6.sh
