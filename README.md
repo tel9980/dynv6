@@ -1,1 +1,1 @@
-# dynv6
+# dynv6 updater script for linux
