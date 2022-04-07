@@ -45,7 +45,7 @@ fi
 if [ "$IP6ADDR" != "" ]
 then
         ping $HOSTNAME_DYNV6 -6 -c 1 > null # a little dirty - needed to update dns-cache
-		IP6ADDR_DYNV6=$(dig $HOSTNAME_DYNV6 AAAA +short)
+	IP6ADDR_DYNV6=$(dig $HOSTNAME_DYNV6 AAAA +short)
 
 	if [ "$IP6ADDR" != "$IP6ADDR_DYNV6" ]
 	then
