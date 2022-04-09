@@ -21,7 +21,7 @@ fi
 
 if [ "$IP4ADDR" != "" ]
 then
-	ping $HOSTNAME_DYNV6 -4 -c 1 > null # a little dirty - needed to update dns-cache
+	ping $HOSTNAME_DYNV6 -4 -c 1 >/dev/null 2>&1
 	IP4ADDR_DYNV6=$(dig $HOSTNAME_DYNV6 A +short)
 
 	if [ "$IP4ADDR" != "$IP4ADDR_DYNV6" ]
@@ -36,8 +36,8 @@ fi
 
 if [ "$IP6ADDR" != "" ]
 then
-        ping $HOSTNAME_DYNV6 -6 -c 1 > null # a little dirty - needed to update dns-cache
-		IP6ADDR_DYNV6=$(dig $HOSTNAME_DYNV6 AAAA +short)
+        ping $HOSTNAME_DYNV6 -6 -c 1 >/dev/null 2>&1
+	IP6ADDR_DYNV6=$(dig $HOSTNAME_DYNV6 AAAA +short)
 
 	if [ "$IP6ADDR" != "$IP6ADDR_DYNV6" ]
 	then
