@@ -2,12 +2,11 @@
 
 HOSTNAME_DYNV6='' # Dynv6 Hostname
 TOKEN_DYNV6=''    # Dynv6 HTTP Token
-ETH_DEV='eth0'    # Your local internet device   
 
 ############################################
 
-IP4ADDR=$(curl -s http://ipecho.net/plain)
-IP6ADDR=`ip addr show $ETH_DEV | grep 'scope global dynamic' | grep -Po 'inet6 \K[0-9a-fA-F:]+'`
+IP4ADDR=$(curl -s https://api.ipify.org)
+IP6ADDR=`ip -6 addr show scope global dynamic mngtmpaddr up|egrep -o '([0-9a-f:]+:+)+[0-9a-f]+'`
 
 if [ "$IP4ADDR" = "" ]
 then
