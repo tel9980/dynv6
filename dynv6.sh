@@ -5,7 +5,7 @@ TOKEN_DYNV6=''    # Dynv6 HTTP Token
 
 ############################################
 
-IP4ADDR=$(curl -s https://ip4.seeip.org)
+IP4ADDR=$(curl -s https://ipv4.seeip.org)
 IP6ADDR=`ip -6 addr show scope global dynamic mngtmpaddr up|egrep -o '([0-9a-f:]+:+)+[0-9a-f]+'`
 
 if [ "$IP4ADDR" = "" ]
@@ -32,7 +32,7 @@ then
 	if [ "$IP4ADDR" != "$IP4ADDR_DYNV6" ]
 	then
 		echo "IPv4 adress has changed -> update ..."
-		curl -s "https://ipv4.dynv6.com/api/update?hostname=$HOSTNAME_DYNV6&token=$TOKEN_DYNV6&ipv4=auto"
+		curl -s "https://ipv4.dynv6.com/api/update?hostname=$HOSTNAME_DYNV6&token=$TOKEN_DYNV6&ipv4=$IP4ADDR"
 		echo "---"
 		rm /tmp/IP4ADDR_DYNV6
 	else
@@ -54,7 +54,7 @@ then
 	if [ "$IP6ADDR" != "$IP6ADDR_DYNV6" ]
 	then
 		echo "IPv6 adress has changed -> update ..."
-		curl -s "https://ipv6.dynv6.com/api/update?hostname=$HOSTNAME_DYNV6&token=$TOKEN_DYNV6&ipv6=auto&ipv6prefix=auto"
+		curl -s "https://ipv6.dynv6.com/api/update?hostname=$HOSTNAME_DYNV6&token=$TOKEN_DYNV6&ipv6=$IP6ADDR&ipv6prefix=auto"
 		echo "---"
 		rm /tmp/IP6ADDR_DYNV6
 	else
