@@ -5,8 +5,14 @@ TOKEN_DYNV6=''    # Dynv6 HTTP Token
 
 ############################################
 
-IP4ADDR=$(curl -s https://ipv4.seeip.org)
-IP6ADDR=`ip -6 addr show scope global dynamic mngtmpaddr up|egrep -o '([0-9a-f:]+:+)+[0-9a-f]+'`
+IP4ADDR=$(curl -s 'https://ipv4.seeip.org')
+IP6ADDR=$(curl -s 'https://ipv6.seeip.org')
+
+## Others IP API services
+#IP4ADDR=$(curl -s 'ipinfo.io' | jq -r '.ip')
+#IP4ADDR=$(curl -s 'https://api.ipify.org')
+#IP6ADDR=$(curl -s 'https://api6.ipify.org')
+#IP6ADDR=$(curl -s 'https://freeipapi.com')
 
 if [ "$IP4ADDR" = "" ]
 then
