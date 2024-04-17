@@ -1,5 +1,9 @@
 #!/bin/sh
 
+#Crontab Example: Upate every hour 
+# sudo crontab -e 
+# 0 * * * * /opt/dynv6.sh >/dev/null 2>&1
+
 HOSTNAME_DYNV6='' # Dynv6 Hostname
 TOKEN_DYNV6=''    # Dynv6 HTTP Token
 
