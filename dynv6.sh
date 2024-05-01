@@ -4,8 +4,8 @@
 # sudo crontab -e 
 # 0 * * * * /opt/dynv6.sh >/dev/null 2>&1
 
-HOSTNAME_DYNV6='' # Dynv6 Hostname
-TOKEN_DYNV6=''    # Dynv6 HTTP Token
+HOSTNAME_DYNV6=qy663.v6.rocks # Dynv6 Hostname
+TOKEN_DYNV6=JfC1gpJd6Z3-eSF2nfuXQ5beeH88sz    # Dynv6 HTTP Token
 
 ############################################
 
